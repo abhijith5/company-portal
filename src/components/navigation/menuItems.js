@@ -43,8 +43,24 @@ export default {
                     path: "/list-jobs",
                     main: () => <ListJobs></ListJobs>,
                     Icon: RiDashboard3Line,
-                    name: "listobs",
+                    name: "listjobs",
                     label: "List Jobs",
+                    multiMenu: false,
+                },
+                {
+                    path: "/published-jobs",
+                    main: () => <ListJobs></ListJobs>,
+                    Icon: RiDashboard3Line,
+                    name: "publishedjobs",
+                    label: "Published Jobs",
+                    multiMenu: false,
+                },
+                {
+                    path: "/unpublished-jobs",
+                    main: () => <ListJobs></ListJobs>,
+                    Icon: RiDashboard3Line,
+                    name: "unpublishedjobs",
+                    label: "Un Published Jobs",
                     multiMenu: false,
                 }
             ]

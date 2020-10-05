@@ -85,12 +85,12 @@ export default function ManageJobs() {
             <Card className={classes.root}>
                 <CardContent>
                     <Typography className={classes.title} variant="h4" component="h4">
-                        Manage Job
+                        Manage Jobs
                     </Typography>
 
                     <Breadcrubs
                         links={["Home", "Jobs"]}
-                        active="Manage Job"
+                        active="Manage Jobs"
                     ></Breadcrubs>
                     <div className={classes.newJob}>
                         <Grid container spacing={3}>
