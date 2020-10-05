@@ -1,13 +1,81 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.sidebar {
+  max-width: 240px;
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.2rem;
+}
+
+.sidebar-item-content {
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-items: center; */
+  /* width: 100%; */
+}
+
+.sidebar-item-icon {
+  margin-right: 6px;
+}
+
+.sidebar-item-text {
+  width: 100%;
+}
+
+.sidebar-item-expand-arrow {
+  font-size: 1.2rem !important;
+}
+
+.sidebar-item-expand-arrow-expanded {
+  color: #09bb12;
+  font-weight: bold;
+}
+
+
+/* login */
+
+.job-company-login-right{
+  height: 100vh !important;
+  align-items: center;
+  display: flex;
+}
+
+.job-company-login-left{
+  background: #FAFAFA !important;
+  height: 100vh;
+}
+
+.job-company-login-card{
+  padding-left: 2rem;
+  padding-right: 8rem;
+}
+
+.job-company-login-input{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+.job-company-paper {
+  padding: 20px;
 }
