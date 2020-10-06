@@ -15,7 +15,7 @@ code {
 .sidebar {
   max-width: 240px;
   height: 100vh;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .sidebar-item {
@@ -32,6 +32,19 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin-left: 30px; */
+  /* align-items: center; */
+  /* width: 100%; */
+}
+.sidebar-item-content-subment {
+  margin-left: 25px;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 30px; */
   /* align-items: center; */
   /* width: 100%; */
 }
@@ -65,6 +78,12 @@ code {
 .job-company-login-left{
   background: #FAFAFA !important;
   height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .job-company-login-left{
+    display: none;
+  }
 }
 
 .job-company-login-card{

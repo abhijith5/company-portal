@@ -9,7 +9,10 @@ import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
 import PaginationTable from '../components/table/paginationTable';
 import BasicTable from '../components/table/basicTable';
-
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab'
+import Box from '@material-ui/core/Box';
+import AppBar from '@material-ui/core/AppBar';
 
 const useStyles = makeStyles({
     root: {
@@ -27,11 +30,42 @@ const useStyles = makeStyles({
 
 });
 
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
-export default function ManageJobs() {
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
+
+
+export default function ListJobs() {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
+    const [value, setValue] = React.useState(0);
 
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
     return (
         <div>
             <Card className={classes.root}>
@@ -46,7 +80,25 @@ export default function ManageJobs() {
                     ></Breadcrubs>
                     <div className={classes.newJob}>
                         <Grid container spacing={3} style={{ padding: "15px" }}>
-                            <BasicTable></BasicTable>
+                            <AppBar position="static" style={{ background: "none", color: "black", boxShadow: "none" }}>
+                                <Tabs
+                                    value={value}
+                                    onChange={handleChange}
+                                >
+                                    <Tab label="All Jobs" {...a11yProps(0)} />
+                                    <Tab label="Published Jobs" {...a11yProps(1)} />
+                                    <Tab label="Un Published Jobs" {...a11yProps(2)} />
+                                </Tabs>
+                            </AppBar>
+                            <TabPanel value={value} index={0}>
+                                <BasicTable></BasicTable>
+                            </TabPanel>
+                            <TabPanel value={value} index={1}>
+                                <BasicTable></BasicTable>
+                            </TabPanel>
+                            <TabPanel value={value} index={2}>
+                                <h6>Unpublished jobs not available</h6>
+                            </TabPanel>
                         </Grid>
                     </div>
                 </CardContent>

@@ -1,6 +1,6 @@
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import { RiDashboard3Line } from "react-icons/ri";
+import { RiDashboard3Line, RiSearchEyeLine, RiSettings2Line, RiBriefcase2Line, RiProfileLine, RiFileList3Line, RiAirplayLine } from "react-icons/ri";
 import {
     BrowserRouter as Router,
     Switch,
@@ -21,58 +21,78 @@ export default {
             name: "dashboard",
             label: "Dashboard",
             multiMenu: false,
+            subMenu: false,
             items: []
         },
         {
             // path: "/bubblegum",
             // main: () => <div>bubblegum!</div>,
-            Icon: RiDashboard3Line,
+            Icon: RiSearchEyeLine,
             name: "jobs",
             label: "Jobs",
             multiMenu: true,
+            subMenu: false,
             items: [
                 {
                     path: "/manage-jobs",
                     main: () => <ManageJobs></ManageJobs>,
-                    Icon: RiDashboard3Line,
+                    Icon: RiBriefcase2Line,
                     name: "manageJobs",
                     label: "Manage Jobs",
                     multiMenu: false,
+                    subMenu: true,
                 },
                 {
                     path: "/list-jobs",
                     main: () => <ListJobs></ListJobs>,
-                    Icon: RiDashboard3Line,
+                    Icon: RiFileList3Line,
                     name: "listjobs",
                     label: "List Jobs",
                     multiMenu: false,
+                    subMenu: true,
+
                 },
-                {
-                    path: "/published-jobs",
-                    main: () => <ListJobs></ListJobs>,
-                    Icon: RiDashboard3Line,
-                    name: "publishedjobs",
-                    label: "Published Jobs",
-                    multiMenu: false,
-                },
-                {
-                    path: "/unpublished-jobs",
-                    main: () => <ListJobs></ListJobs>,
-                    Icon: RiDashboard3Line,
-                    name: "unpublishedjobs",
-                    label: "Un Published Jobs",
-                    multiMenu: false,
-                }
+                // {
+                //     path: "/published-jobs",
+                //     main: () => <ListJobs></ListJobs>,
+                //     Icon: RiAirplayLine,
+                //     name: "publishedjobs",
+                //     label: "Published Jobs",
+                //     multiMenu: false,
+                //     subMenu:true,
+
+                // },
+                // {
+                //     path: "/unpublished-jobs",
+                //     main: () => <ListJobs></ListJobs>,
+                //     Icon: RiAirplayLine,
+                //     name: "unpublishedjobs",
+                //     label: "Un Published Jobs",
+                //     multiMenu: false,
+                //     subMenu:true,
+
+                // }
             ]
         },
         {
-            path: "/shoelaces",
-            main: () => <div>shoelaces!</div>,
-            Icon: RiDashboard3Line,
-            name: "Home3",
-            label: "Hom3",
+            path: "/settings",
+            main: () => <div>Settings</div>,
+            Icon: RiSettings2Line,
+            name: "settings",
+            label: "Settings",
             items: [],
             multiMenu: false,
+            subMenu: false,
+        },
+        {
+            path: "/profile",
+            main: () => <div>Profile</div>,
+            Icon: RiProfileLine,
+            name: "profile",
+            label: "Profile",
+            items: [],
+            multiMenu: false,
+            subMenu:false,
 
         }
     ]

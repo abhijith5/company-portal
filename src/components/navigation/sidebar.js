@@ -16,7 +16,7 @@ import {
 
 function SidebarItem({ open, depthStep = 10, depth = 0, submenu, expanded, item, ...rest }) {
     const [collapsed, setCollapsed] = React.useState(true);
-    const { label, items, Icon, path, onClick: onClickProp } = item;
+    const { label, items, Icon, path, subMenu, onClick: onClickProp } = item;
 
 
     function toggleCollapse() {
@@ -56,17 +56,18 @@ function SidebarItem({ open, depthStep = 10, depth = 0, submenu, expanded, item,
                 {...rest}
                 style={{ justifyContent: "space-between" }}
             >
-                <div
-                    style={{ paddingLeft: depth * depthStep }}
-                    className="sidebar-item-content"
-                >
+                <Link to={path} style={{ textDecoration: "none", color: "#607d8b"}}>
+                    <div
+                        style={{ paddingLeft: depth * depthStep }}
+                        className={!subMenu ? "sidebar-item-content" : "sidebar-item-content-subment"}
+                    >
 
-                    {Icon && <Icon className="sidebar-item-icon" fontSize="3.5rem" style={{ color: "#94A8BD" }} />}
-                    <div className="sidebar-item-text">
-                        <Link to={path} style={{ textDecoration: "none", color: "#94A8BD", paddingLeft: "1rem" }}>{label}</Link>
-
+                        {Icon && <Icon className="sidebar-item-icon" fontSize="2.6rem" style={{ color: "#94A8BD" }} />}
+                        <div className="sidebar-item-text" style={{paddingLeft:"1rem"}}>
+                            {label}
+                        </div>
                     </div>
-                </div>
+                </Link>
                 {open ? expandIcon : null}
             </ListItem>
             <Collapse in={!collapsed} timeout="auto" unmountOnExit>
