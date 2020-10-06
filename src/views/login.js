@@ -25,21 +25,22 @@ export default function Login(props) {
         console.log("login")
         // history.push('/')
         setAuth(true)
+        console.log(auth)
         // props.auth(true)
 
     }
 
     return (
         <div>
-            
+
             {!auth ?
                 <Grid container spacing={1}>
-                    <Grid item md={6} xs={12}>
+                    <Grid item md={6}>
                         <div className="job-company-login-left">
 
                         </div>
                     </Grid>
-                    <Grid item xs={6} md={6}>
+                    <Grid item xs={12} md={6}>
                         <div className="job-company-login-right">
                             <div className="job-company-login-card">
                                 <h3>Login</h3>
@@ -60,7 +61,7 @@ export default function Login(props) {
                                         autoComplete="current-password"
                                     />
                                 </div>
-                                <Button variant="contained" color="primary" onClick={loginClick}>
+                                <Button variant="contained" color="primary" onClick={() => loginClick()}>
                                     Submit
                         </Button>
                             </div>

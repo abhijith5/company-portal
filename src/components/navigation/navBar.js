@@ -24,6 +24,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { RiMailLine, RiNotification2Line, RiAccountCircleLine } from "react-icons/ri";
 
 import {
     BrowserRouter as Router,
@@ -39,7 +40,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
-        background: "#1E88E5",
+        background: "#2C0750",
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['width', 'margin'], {
             easing: theme.transitions.easing.sharp,
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
         overflowX: 'hidden',
         width: theme.spacing(7) + 1,
         [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9) + 1,
+            width: theme.spacing(8) + 1,
         },
     },
     drawerOpen: {
@@ -80,8 +81,9 @@ const useStyles = makeStyles((theme) => ({
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
-        height: '100vh',
-        background: "#ECF3F7"
+        // height: '100',
+        minHeight: "100vh",
+        background: "#eaeaea"
     },
     toolbar: {
         display: 'flex',
@@ -196,7 +198,7 @@ export default function NavBar() {
             <MenuItem>
                 <IconButton aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
+                        <RiMailLine />
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
@@ -204,7 +206,7 @@ export default function NavBar() {
             <MenuItem>
                 <IconButton aria-label="show 11 new notifications" color="inherit">
                     <Badge badgeContent={11} color="secondary">
-                        <NotificationsIcon />
+                        <RiNotification2Line />
                     </Badge>
                 </IconButton>
                 <p>Notifications</p>
@@ -216,7 +218,7 @@ export default function NavBar() {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <AccountCircle />
+                    <RiAccountCircleLine />
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
@@ -251,12 +253,12 @@ export default function NavBar() {
                     <div className={classes.sectionDesktop}>
                         <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
-                                <MailIcon />
+                                <RiMailLine />
                             </Badge>
                         </IconButton>
                         <IconButton aria-label="show 17 new notifications" color="inherit">
                             <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
+                                <RiNotification2Line />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -267,7 +269,7 @@ export default function NavBar() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <AccountCircle />
+                            <RiAccountCircleLine />
                         </IconButton>
                     </div>
                     <div className={classes.sectionMobile}>

@@ -8,11 +8,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import { RiEditLine, RiGitRepositoryCommitsLine,RiDeleteBinLine } from "react-icons/ri";
+import { RiEditLine, RiGitRepositoryCommitsLine, RiDeleteBinLine } from "react-icons/ri";
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 650,
+        minWidth: " 100%",
+        background: "none",
+        boxShadow: "none"
     },
     deleteBtn: {
         background: "red"
@@ -24,8 +26,8 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    createData(1, 'Frozen yoghurt'),
-    createData(2, 'Ice cream sandwich'),
+    createData(1, 'React JS Developer'),
+    createData(2, 'PHP Developer'),
 
 ];
 
